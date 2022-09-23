@@ -10,10 +10,12 @@ class UpdateProduct {
       required String description,
       required String image,
       required String category,
+      required String id
     }) async {
     Map<String, ProductModel> data=await Api().post(
-      url: 'https://fakestoreapi.com/products',
+      url: 'https://fakestoreapi.com/products/$id',
       body: {
+        'id':id,
         'title': title,
         'price': price,
         'description': description,
